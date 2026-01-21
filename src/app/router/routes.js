@@ -18,6 +18,7 @@ import StudyPlanApprove from '../../domain/education/pages/StudyPlanApprove.vue'
 import CourseSelect from '../../domain/education/pages/CourseSelect.vue'
 import EnrollmentApprove from '../../domain/education/pages/EnrollmentApprove.vue'
 import CreditProgress from '../../domain/education/pages/CreditProgress.vue'
+import CreditProgressCollege from '../../domain/education/pages/CreditProgressCollege.vue'
 import Timetable from '../../domain/education/pages/Timetable.vue'
 import ProgramView from '../../domain/education/pages/ProgramView.vue'
 
@@ -101,7 +102,10 @@ export const routes = [
             { path: 'education/study-plan/approve', component: StudyPlanApprove, meta: { title: '培养计划审批', group: GROUP.EDU, roles: R.TEACHER_ADMIN } },
             { path: 'education/course-select', component: CourseSelect, meta: { title: '选课', group: GROUP.EDU, roles: R.STUDENT } },
             { path: 'education/enrollment-approve', component: EnrollmentApprove, meta: { title: '选课审批', group: GROUP.EDU, roles: R.TEACHER_ADMIN } },
-            { path: 'education/credit-progress', component: CreditProgress, meta: { title: '学分进度', group: GROUP.EDU, roles: R.STUDENT_TEACHER_ADMIN } },
+            // 学分进度（学生）
+            { path: 'education/credit-progress', component: CreditProgress, meta: { title: '我的学分进度', group: GROUP.EDU, roles: R.STUDENT } },
+            // 学分查询（学院管理员）
+            { path: 'education/credit-overview', component: CreditProgressCollege, meta: { title: '学分总览（学院）', group: GROUP.EDU, roles: R.ADMIN } },
             { path: 'education/timetable', component: Timetable, meta: { title: '课表', group: GROUP.EDU, roles: R.STUDENT } },
             { path: 'education/program', component: ProgramView, meta: { title: '培养方案', group: GROUP.EDU, roles: R.STUDENT_TEACHER_ADMIN } },
 
